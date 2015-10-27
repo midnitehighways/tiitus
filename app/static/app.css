@@ -1,0 +1,22 @@
+.position {
+  width: 500px;
+  border: 2px solid black;
+}
+.position-details {
+  margin: 10px 20px;
+}
+.apply {
+  display: inline-block;
+  float: right;
+  padding: 20px;
+  background-color: green;
+  color: white;
+}
+.next {
+  display: inline-block;
+  padding: 20px;
+  float: left
+}
+.hidden {
+  display: none;
+}
