@@ -1,5 +1,6 @@
 $(function() {
   $(".js-apply").click(function() {
-    $(".js-requirements").removeClass("hidden")
+    $(".js-details").removeClass("hidden")
+    $(this).text("Apply!")
   })
 })

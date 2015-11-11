@@ -1,21 +1,25 @@
 .position {
   width: 500px;
   border: 2px solid black;
+  margin: 100px auto 0 auto;
 }
 .position-details {
   margin: 10px 20px;
 }
-.apply {
+.apply, .next {
   display: inline-block;
-  float: right;
   padding: 20px;
+  top: 2px;
+  position: relative;
+}
+.apply {
+  float: right;
   background-color: green;
   color: white;
+  right: -2px;
 }
 .next {
-  display: inline-block;
-  padding: 20px;
-  float: left
+  float: left;
 }
 .hidden {
   display: none;

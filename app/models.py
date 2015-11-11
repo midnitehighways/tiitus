@@ -18,5 +18,6 @@ class Position(models.Model):
 	company = models.ForeignKey(Company)
         description = models.TextField()
         requirements = models.TextField()
+        created_at = models.DateTimeField(auto_now=True)
         def __str__(self):
 		return '%s / %s' % (self.title, self.company.name) 
