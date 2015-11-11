@@ -15,3 +15,4 @@ class PositionAdmin(admin.ModelAdmin):
   pass
 
 admin.site.register(Position, PositionAdmin)
+

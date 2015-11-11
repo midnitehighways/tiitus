@@ -1,0 +1,18 @@
+available jobseekers:
+{% for person in person_list %}
+	<p>
+		Name: {{ person.firstname }} {{ person.lastname }}
+	</p>
+	<p>
+		Gender: {{ person.gender }}
+	</p>
+
+	<p>
+		City: {{ person.city }}
+	</p>
+	<img src="{{ person.photo.url }}">
+	{{ person.photo.url }}
+
+
+{% endfor %}
+	
