@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 db.sqlite3
 *.pyc
 =======
@@ -61,4 +60,4 @@ docs/_build/
 
 # PyBuilder
 target/
->>>>>>> master
+.DS_Store
