@@ -3,9 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Jobseeker(models.Model):
-	firstname = models.CharField(max_length=100)
-	lastname = models.CharField(max_length=100)
-#	country = CountryField()
+	firstname = models.CharField(max_length=50)
+	lastname = models.CharField(max_length=50)
 	country = models.CharField(max_length=50, default='Finland')
 	city = models.CharField(max_length=50, default='Helsinki')
 	DOB = models.DateTimeField()
@@ -25,6 +24,19 @@ class Jobseeker(models.Model):
 		return self.lastname
 
 class Company(models.Model):
-	name = models.CharField(max_length=100)
+	name = models.CharField(max_length=255)
 	advertisement_short = models.CharField(max_length=500)
 	advertisement_full = models.CharField(max_length=2000, blank=True)
+	def __str__(self):
+		return self.name
+	class Meta:
+		verbose_name_plural = "companies"
+
+class Position(models.Model):
+	title = models.CharField(max_length=255)
+	company = models.ForeignKey(Company)
+        description = models.TextField()
+        requirements = models.TextField()
+        created_at = models.DateTimeField(auto_now=True)
+        def __str__(self):
+		return '%s / %s' % (self.title, self.company.name) 

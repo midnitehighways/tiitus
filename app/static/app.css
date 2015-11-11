@@ -1,0 +1,26 @@
+.position {
+  width: 500px;
+  border: 2px solid black;
+  margin: 100px auto 0 auto;
+}
+.position-details {
+  margin: 10px 20px;
+}
+.apply, .next {
+  display: inline-block;
+  padding: 20px;
+  top: 2px;
+  position: relative;
+}
+.apply {
+  float: right;
+  background-color: green;
+  color: white;
+  right: -2px;
+}
+.next {
+  float: left;
+}
+.hidden {
+  display: none;
+}
