@@ -11,15 +11,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Company',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=100)),
-                ('advertisement_short', models.CharField(max_length=500)),
-                ('advertisement_full', models.CharField(max_length=2000, blank=True)),
-            ],
-        ),
+	migrations.AddField('Company', 'advertisement_short', models.CharField(max_length=500)),
+        migrations.AddField('Company', 'advertisement_full', models.CharField(max_length=2000, blank=True)),
         migrations.RemoveField(
             model_name='jobseeker',
             name='description',
