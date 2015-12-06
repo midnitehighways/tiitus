@@ -1,0 +1,38 @@
+{% if user and not user.is_anonymous %}
+  <a>Hello, {{ user.get_full_name }}!</a>
+  <br>
+  <a href="/logout">Logout</a>
+
+<h3>User data</h3>
+<dl>
+{% for key, value in user_meta.items %}
+	{% if key != "access_token" and key != "id" %}
+	<dt><strong>{{ key }}</strong></dt>
+	<dd>{{ value }}</dd>
+	{% endif %}
+{% endfor %}
+</dl>
+{% else %}
+  <a href="{% url 'social:begin' 'linkedin' %}?next={{ request.path }}">Login</a>
+{% endif %}
+
+<p>
+available jobseekers:
+</p>
+{% for person in person_list %}
+	<p>
+		Name: {{ person.firstname }} {{ person.lastname }}
+	</p>
+	<p>
+		Gender: {{ person.gender }}
+	</p>
+
+	<p>
+		City: {{ person.city }}
+	</p>
+	<img src="{{ person.photo.url }}">
+	{{ person.photo.url }}
+
+
+{% endfor %}
+	
