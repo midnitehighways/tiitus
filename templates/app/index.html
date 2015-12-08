@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
   <title>Tiitus Mockup</title>
-  <link rel="stylesheet" type="text/css" href="{% static "dist/css/bootstrap.min.css" %}">
-  <link rel="stylesheet" type="text/css" href="{% static "dist/css/style.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "landing/dist/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "landing/dist/css/style.css" %}">
 </head>
 <body>
 <div class="container-fluid viewport">
@@ -44,7 +44,7 @@
             <input class="form-input" type="text" name="fullname"><br>
               <h6 class="join-info margin_change">Password</h6><br>
             <input class="form-input" type="text" name="password"><br> -->
-            <button type="button" class="btn-block" onclick="location.href='{% url 'social:begin' 'linkedin' %}?next={{ request.path }}'" >JOIN</button>
+            <button type="button" class="btn btn-block" onclick="location.href='{% url 'social:begin' 'linkedin' %}?next={{ request.path }}'" >JOIN</button>
           </form>
       </div>
       </div>
@@ -57,12 +57,12 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.</p>
     </div>
     <div class="col-md-3">
-      <img class=" image-center" src="{% static "images/more_info_img1.png" %}"/>
+      <img class=" image-center" src="{% static "landing/images/more_info_img1.png" %}"/>
         <h3 class="h3-benefits">First benefit</h3>
       <p class="p-benefits">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod</p>
     </div>
     <div class="col-md-3">
-      <img class=" image-center" src="{% static "images/more_info_img2.png" %}" />
+      <img class=" image-center" src="{% static "landing/images/more_info_img2.png" %}" />
         <h3 class="h3-benefits">Second benefit</h3>
       <p class="p-benefits">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod</p>
     </div>
@@ -78,7 +78,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <img class="img-responsive" src="{% static "images/features_img.png" %}" />
+        <img class="img-responsive" src="{% static "landing/images/features_img.png" %}" />
       </div>
       <div class="col-md-6">
         <ul class="list-unstyled">
@@ -141,17 +141,17 @@
       <div class="col-md-6">
         <div id="slideshow">
           <div>
-            <img class="img-circle avatar" src="{% static "images/zach.jpg" %}" alt="avatar" />
+            <img class="img-circle avatar" src="{% static "landing/images/zach.jpg" %}" alt="avatar" />
             <blockquote>"Lorem ipsum dolor sit amet, consectetur..."</blockquote>
             <p>John Doe, Microsoft</p>
           </div>
           <div>
-            <img class="img-circle avatar" src="{% static "images/zach-leatherman.jpg" %}" alt="avatar" />
+            <img class="img-circle avatar" src="{% static "landing/images/zach-leatherman.jpg" %}" alt="avatar" />
             <blockquote>"Fifty-sixty tilanne..."</blockquote>
             <p>Matti Nykänen, Lahti</p>
           </div>
           <div>
-            <img class="img-circle avatar" src="{% static "images/zach.jpg" %}" alt="avatar" />
+            <img class="img-circle avatar" src="{% static "landing/images/zach.jpg" %}" alt="avatar" />
             <blockquote>"Lorem ipsum dolor sit amet, consectetur..."</blockquote>
             <p>Geiger Counter, Mûnster</p>
           </div>
@@ -165,8 +165,8 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" src="{% static "node_modules/jquery/dist/jquery.min.js" %}"></script>
-<script type="text/javascript" src="{% static "dist/js/bootstrap.min.js" %}"></script>
-<script type="text/javascript" src="{% static "dist/js/app.js" %}"></script>
+<script type="text/javascript" src="{% static "landing/node_modules/jquery/dist/jquery.min.js" %}"></script>
+<script type="text/javascript" src="{% static "landing/dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "landing/dist/js/app.js" %}"></script>
 </body>
 </html>
