@@ -1,0 +1,16 @@
+<div class="container vh-centered">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="h1-setup">Could you please specify?</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="select-ball-ul">
+        <li class="select-ball" ng-repeat="speciality in speciality.specialities">
+          <a ng-click="go($event)" ng-href="#skills" data-speciality="{{speciality.name}}"> {{speciality.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

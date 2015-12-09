@@ -1,0 +1,30 @@
+<div class="container vh-centered">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="h1-setup">What are your key strengths?</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="select-ball-ul">
+        <li class="select-ball" ng-click="toggleSkill(skill)" ng-repeat="skill in skills.skills" ng-class="{'select-ball-active': skill.selected}" >
+          <a href="#" onclick="return false;">{{skill.name}}</a>
+        </li>
+        <li class="select-ball" ng-click="toAddSkill=true">
+          <a href="#" onclick="return false;">+</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <form id="add-skill-form">
+          <input type="text" id="add-skill-text" name="addSkill" ng-show="toAddSkill" ng-model="newSkill">
+          <br>
+          <input type="submit" class="add-skill-submit" value="Add" ng-show="toAddSkill" ng-click="addSkill()">
+          <input type="submit" class="add-skill-submit" ng-show="toAddSkill" value="Cancel" ng-click="toAddSkill=false;">
+        </form>
+        <span><a class="create-profile" ng-href="#about" ng-click="confirmSkills()">Create Profile</a></span>
+      </div>
+    </div>
+  </div>
+</div>

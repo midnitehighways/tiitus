@@ -1,0 +1,44 @@
+<div class="container-fluid vh-centered">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="h1-setup">Hi, {{firstName}}.</h1>
+            <p class="p-main">Here are the latest positions for you.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="flex-container" id="animate-target">
+                <div class="card" ng-repeat="job in jobs" id="card-front" ng-show="job_index == $index">
+                    <div class="card-top">
+                        <img class="card-logo" src="{{job.logo}}">
+                        <div class="job-title" id="job-title-box">
+                            <h1>{{job.jobTitle}}</h1>
+                            <h2>{{job.company}}</h2>
+                        </div>
+                    </div>
+                    <div class="card-image">
+                        <img class="card-image-img" src="{{job.image}}">
+                    </div>
+                    <div class="card-main" id="main-card">
+                        <h2>{{job.skills}}</h2>
+                        <p>{{job.description}}</p>
+                    </div>
+                    <div class="card-bottom">
+                        <span class="pull-left card-btn" id="discard" ng-click="discard()">Discard</span>
+                        <span class="pull-right card-btn" id="learn-more" ng-click="learnMore()">Learn More</span>
+                        <span class="pull-right card-btn" id="apply" ng-click="apply()">Apply</span>
+                    </div>
+                </div>
+                <div class="card" ng-show="showMore">
+                    <div class="card2-main">
+                        <p>{{jobs[job_index].dtn2}}</p>
+                    </div>
+                    <div class="card-bottom">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from app.views import home
+from app.views import home, profile, positions, apply_position
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^$', home, name='home')
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', include('app.urls')),
+    url(r'^profile/$', profile),
+    url(r'^positions/$', positions),
+    url(r'^apply/$', apply_position),
     url('', include('social.apps.django_app.urls', namespace='social'))
 ]

@@ -1,0 +1,16 @@
+<div class="container vh-centered">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="h1-setup">Hi, {{ firstName }}. Please choose your main interest.</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="select-ball-ul">
+        <li class="select-ball" ng-repeat="interest in interest.interests">
+          <a ng-href="#speciality" ng-click="go($event)" data-interest="{{interest.name}}"> {{interest.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

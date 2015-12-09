@@ -1,5 +1,6 @@
 from django.db import models
 #from django_countries.fields import CountryField
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Jobseeker(models.Model):
@@ -24,19 +25,42 @@ class Jobseeker(models.Model):
 		return self.lastname
 
 class Company(models.Model):
-	name = models.CharField(max_length=255)
-	advertisement_short = models.CharField(max_length=500)
-	advertisement_full = models.CharField(max_length=2000, blank=True)
-	def __str__(self):
-		return self.name
-	class Meta:
-		verbose_name_plural = "companies"
+  name = models.CharField(max_length=255)
+  advertisement_short = models.CharField(max_length=500)
+  advertisement_full = models.CharField(max_length=2000, blank=True)
+  contact_email = models.CharField(max_length=255, blank=True)
+
+  def __str__(self):
+    return self.name
+  class Meta:
+    verbose_name_plural = "companies"
 
 class Position(models.Model):
-	title = models.CharField(max_length=255)
-	company = models.ForeignKey(Company)
-        description = models.TextField()
-        requirements = models.TextField()
-        created_at = models.DateTimeField(auto_now=True)
-        def __str__(self):
-		return '%s / %s' % (self.title, self.company.name) 
+  title = models.CharField(max_length=255)
+  company = models.ForeignKey(Company)
+  description = models.TextField()
+  requirements = models.TextField()
+  details = models.TextField(blank=True)
+  created_at = models.DateTimeField(auto_now=True)
+
+  def json(self):
+    return {
+      'id': self.id,
+      'requirements': self.requirements,
+      'description': self.description,
+      'title': self.title,
+      'company_name': self.company.name,
+      'details': self.details
+    }
+
+  def __str__(self):
+    return '%s / %s' % (self.title, self.company.name) 
+
+
+class Profile(models.Model):
+        interest = models.CharField(max_length=50)
+        about = models.TextField()
+        skills = models.TextField()
+        speciality = models.TextField()
+        user = models.ForeignKey(User)
+

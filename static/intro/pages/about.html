@@ -1,0 +1,19 @@
+<div class="container vh-centered">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="h1-setup">Could you describe yourself shortly?</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+      <textarea class="center-block" maxlength="700" rows="6" id="description-box" ng-trim="false" ng-model="about.aboutValue.text">
+      </textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+      <span class="pull-left"><a ng-click="go()">Done</a></span>
+      <span class="pull-right" id="char-count">{{about.aboutValue.text.length}}/700</span>
+    </div>
+  </div>
+</div>

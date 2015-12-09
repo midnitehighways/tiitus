@@ -120,8 +120,9 @@ SOCIAL_AUTH_LINKEDIN_SECRET = 'nDRK5cuD257wTjnz'
 
 # Add email to requested authorizations.
 SOCIAL_AUTH_LINKEDIN_SCOPE = ['r_basicprofile', 'r_emailaddress']
+
 # Add the fields so they will be requested from linkedin.
-SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = ['email-address', 'headline', 'industry']
+SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = ['email-address', 'headline', 'industry', 'public-profile-url']
 # Arrange to add the fields to UserSocialAuth.extra_data
 SOCIAL_AUTH_LINKEDIN_EXTRA_DATA = [('id', 'id'),
                                    ('firstName', 'first_name'),
@@ -142,4 +143,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
 )
+
+
+EMAIL_HOST = 'mail.inbox.lv'
+EMAIL_HOST_USER = 'tiitus@inbox.lv'
+EMAIL_HOST_PASSWORD = 'Opheb9Bi'
+DEFAULT_FROM_EMAIL = 'tiitus@inbox.lv'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
 
